@@ -1,0 +1,25 @@
+<div class="list list-inset" ng-repeat="p in results">
+	<form class="form-horizontal" id="reg" name="mainForm" ng-submit="updForm(mainForm)">
+		<label class="item item-input">
+			<input type="text" placeholder="User Name"  name="username" ng-model="p.username"  id="username" required value="{{ p.user_name}}">
+			<span class="error" ng-show="mainForm.username.$error.required"></span>
+		</label>
+		<label class="item item-input">
+			<input type="text" placeholder="Mobile number"  name="mobile" ng-model="p.mobile" id="mobile" required value="{{ p.mobile}}">
+			<span class="error" ng-show="mainForm.mobile.$error.required"></span>
+		</label>
+		<label class="item item-input">
+			<input type="text" placeholder="Fax"  name="fax" ng-model="p.fax" id="fax" required value="{{ p.fax}}">
+			<span class="error" ng-show="mainForm.fax.$error.required"></span>
+		</label>
+		<label class="item item-input">
+			<textarea id="address" name="address" Placeholder="Address" ng-model="p.address" required>{{ p.address}}</textarea>
+			<span class="error" ng-show="mainForm.address.$error.required"></span>
+		</label>
+		<div>
+			<button type="submit" class="button button-block  button-energized">Submit</button>
+		</div>
+		<span ng-bind-html="smsloading"></span>
+		<span>{{ failError }}</span>
+	</form>
+</div>
